@@ -1,6 +1,6 @@
 #  이세영
 ### 원본코드 : https://github.com/easysIT/nwitter
-### 03.30
+### [03.30]
 <details>
 <summary>Firebase 프로젝트 생성 및 설정</summary>
 
@@ -92,19 +92,19 @@ export default AppRouter
 
 </details>
 
-### 03.23
+### [03.23]
 <details>
 <summary>nwitter 프로젝트 생성</summary>
-```
+
 npx create-react-app 프로젝트명
-```
+
 Git 명령어
 ```
-git init // .git 파일 생성
-git remote origin add [주소] // github 레포지토리와 연동
-git add . // 작업한 파일 추가
-git commit -m "커밋 메세지" // commit 진행
-git push origin master // 푸시 진행
+- git init // .git 파일 생성
+- git remote origin add [주소] // github 레포지토리와 연동
+- git add . // 작업한 파일 추가
+- git commit -m "커밋 메세지" // commit 진행
+- git push origin master // 푸시 진행
 ```
 
 <details>

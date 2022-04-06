@@ -93,7 +93,8 @@ export default AppRouter
 </details>
 
 ### 03.23
-nwitter 프로젝트 생성
+<details>
+<summary>nwitter 프로젝트 생성</summary>
 ```
 npx create-react-app 프로젝트명
 ```
@@ -119,4 +120,4 @@ git push origin master // 푸시 진행
 
 App.css / App.test.js / index.css / logo.svg / reportWebVitals.js / setupTest.js 
 </details>
-	
+<details>

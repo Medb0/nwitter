@@ -1,5 +1,32 @@
 #  이세영
 ### 원본코드 : https://github.com/easysIT/nwitter
+
+### [04.06]
+<details>
+<summary>Router 설정 및 firebase.js 수정</summary>
+
+```
+- firebase.js 수정 // fbase.js 으로 파일명 변경 및 코드 수정 
+    < firebase 버전 에러시 참고 >
+    //to use firebase app
+    import firebase from 'firebase/app'; //older version
+    import firebase from 'firebase/compat/app'; //v9
+
+    //to use auth
+    import 'firebase/auth'; //older version
+    import 'firebase/compat/auth'; //v9
+
+    //to use firestore
+    import 'firebase/firestore'; //Older Version
+    import 'firebase/compat/firestore'; //v9
+
+- jsconfig.json 추가 // 절대경로 지정을 위한 설정파일
+- App.js 코드 수정 // useState 사용
+- npm i react-router-dom@5.2.0 // 버전 수정
+- Router.js 코드 추가 (로그인 상태 변수로 Auth, Home 분기점 추가)
+```
+</details>
+
 ### [03.30]
 <details>
 <summary>Firebase 프로젝트 생성 및 설정</summary>

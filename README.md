@@ -1,6 +1,29 @@
 #  이세영
 ### 원본코드 : https://github.com/easysIT/nwitter
 
+
+### [04.13]
+<details>
+<summary>firebase 설정</summary>
+
+```
+- firebase 설정 변경
+    1. firebase 콘솔에 접속 Authentication 
+    2. 로그인 제공업체 추가 (이메일/비밀번호 , Google, GitHub)
+    3. GitHub 추가시 : GitHub 접속 > Settings > Developer settings > OAuth Apps > 새로운 앱 추가
+
+- firebase API 키 인증 에러 발견 
+    - Uncaught FirebaseError: Firebase: Error (auth/invalid-api-key). 
+    - 해당 에러는 API 키를 제대로 들어가지 않는 상태라 발생한 에러
+    - .env , firebase version , 각 js 파일 이상 없음
+    - 해결 방법 : .env 가 작동을 안하고 있는것 같아서 dotenv 라이브러리 추가
+    - 명령어 : npm i dotenv --save
+
+- Auth.js 코드 추가 : 로그인 및 회원가입 기능 추가
+```
+
+</details>
+
 ### [04.06]
 <details>
 <summary>Router 설정 및 firebase.js 수정</summary>

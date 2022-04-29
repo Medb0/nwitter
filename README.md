@@ -2,6 +2,22 @@
 ### 원본코드 : https://github.com/easysIT/nwitter
 
 
+### [04.27]
+<details>
+<summary>Sign in, Sign up 구현</summary>
+
+```
+- 로그인 기능을 위한 코드 수정
+    1. Auth.js - 회원가입 , 로그인 폼 및 메소드 작성
+    2. App.js - 로그인이 성공한 경우 Home 으로 이동시킴. 
+
+- firebase 에 로그인, 회원가입이 반영되는지 확인
+    1. firebase 콘솔에 접속 -> Authentication -> Users 에서 확인할 수 있음.
+
+```
+
+</details>
+
 ### [04.13]
 <details>
 <summary>firebase 설정</summary>

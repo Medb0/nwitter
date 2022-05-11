@@ -1,4 +1,4 @@
-import { authService, firebaseInstance } from "fbase";
+import { authService, firebaseInstance } from "fbase";  // firebaseInstance 추가
 import { useState } from "react";
 
 const Auth = () => {
@@ -37,7 +37,7 @@ const Auth = () => {
 
     const toggleAccount = () => setNewAccount((prev) => !prev);
 
-    const onSocialClick = async (event) => {
+    const onSocialClick = async (event) => {    // onSocialClick 구현
         const {
             target: { name },
         } = event;

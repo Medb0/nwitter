@@ -1,4 +1,5 @@
-import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+// import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Profile from "routes/Profile";
@@ -23,7 +24,7 @@ const AppRouter = ({ isLoggedIn }) => {
             <Auth />
           </Route>
         )}
-        <Redirect from="*" to="/" />
+        {/* <Redirect from="*" to="/" /> */}
       </Switch>
     </Router>
   );

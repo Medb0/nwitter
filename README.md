@@ -1,6 +1,22 @@
 #  이세영
 ### 원본코드 : https://github.com/easysIT/nwitter
 
+### [05.04]
+<details>
+<summary>Navigation, Log Out 구현, firebase DB 생성</summary>
+
+```
+- firebase 콘솔 : 
+
+- fibase.js : firebaseInstance 추가
+- Auth.js : firebaseInstance 추가, onSocialClick 메소드 구현
+- Navigation.js : 파일 생성  
+- Router.js : import Navigation , Redirect 설정 추가 (주석 처리됨)
+- Profile.js : Log Out 버튼 추가, history 변수 추가
+
+```
+
+</details>
 
 ### [04.27]
 <details>

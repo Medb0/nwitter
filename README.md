@@ -1,6 +1,29 @@
 #  이세영
 ### 원본코드 : https://github.com/easysIT/nwitter
 
+### [05.11]
+<details>
+<summary>firebase DB 생성 및 연동 </summary>
+
+```
+1. React -> firebase 연결
+    fbase.js 파일에 코드 추가
+    import "firebase/firestore";
+    export const dbService = firebase.firestore();
+2. firebase 에 데이터 저장
+    - dbService.collection("nweets") 컬렉션 생성
+    - add({ text:nweet, createAt:Date.now()}) == 문서 생성
+    - setNweet("") == 문자열 초기화
+    - firebase 콘솔에서 저장된 값 확인
+3. firebase 에서 데이터 조회 (SELECT)
+    - get 함수를 이용하여 nweet 컬렉션(테이블)과 데이터를 불러옴 
+        => 데이터에 개수만큼 불러옴 (List 혹은 foreach 사용할것)
+4. 조회된 데이터로 리스트 생성
+5. 트윗 아이디 저장
+
+```
+</details>
+
 ### [05.04]
 <details>
 <summary>Navigation, Log Out 구현, firebase DB 생성</summary>

@@ -1,39 +1,41 @@
-import { dbService, storageService } from "fbase";
 import { useEffect, useState } from "react";
 import Nweet from "components/Nweet";
 import { v4 as uuidv4 } from "uuid";
+import { getDownloadURL, getStorage, ref, uploadString } from 'firebase/storage';
+import { dbService, firebaseApp, storageService } from "fbase";
+import { addDoc, collection, onSnapshot, orderBy, query } from "firebase/firestore";
 
 const Home = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
   const [attachment, setAttachment] = useState("");
+  const docRef = collection(dbService, "nweets");
+  const qu = query(docRef, orderBy("createdAt", "desc"));
 
   useEffect(() => {
-    dbService.collection("nweets").onSnapshot((snapshot) => {
-      const newArray = snapshot.docs.map((document) => ({
-        id: document.id,
-        ...document.data(),
-      }));
-      setNweets(newArray);
-    });
+    onSnapshot(qu, (snapshot) => {
+        const newArray = snapshot.docs.map((document) => ({
+          id: document.id, ...document.data(),
+        }));
+        setNweets(newArray);
+      });
   }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     let attachmentUrl = "";
-    if (attachment !== "") {
-      const attachmentRef = storageService
-        .ref()
-        .child(`${userObj.uid}/${uuidv4()}`);
-      const response = await attachmentRef.putString(attachment, "data_url");
-      attachmentUrl = await response.ref.getDownloadURL();
+
+    if (attachment) {
+      const attachmentRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
+      const response = await uploadString(attachmentRef, attachment, 'data_url');
+      attachmentUrl = await getDownloadURL(response.ref);
     }
-    await dbService.collection("nweets").add({
-      text: nweet,
-      createdAt: Date.now(),
-      creatorId: userObj.uid,
-      attachmentUrl,
-    });
+    await addDoc(docRef, {
+        text: nweet,
+        createdAt: Date.now(),
+        creatorId: userObj.uid,
+        attachmentUrl,
+      });
     setNweet("");
     setAttachment("");
   };

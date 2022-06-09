@@ -1,4 +1,5 @@
-import { authService, firebaseInstance } from "fbase";
+import { authService } from "fbase";
+import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
 import { useState } from "react";
 
 const Auth = () => {
@@ -46,9 +47,9 @@ const Auth = () => {
     } = event;
     let provider;
     if (name === "google") {
-      provider = new firebaseInstance.auth.GoogleAuthProvider();
+      provider = new GoogleAuthProvider();
     } else if (name === "github") {
-      provider = new firebaseInstance.auth.GithubAuthProvider();
+      provider = new GithubAuthProvider();
     }
     const data = await authService.signInWithPopup(provider);
     console.log(data);

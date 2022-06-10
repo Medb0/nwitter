@@ -1,6 +1,23 @@
 #  이세영
 ### 원본코드 : https://github.com/easysIT/nwitter
 
+### [06.07]
+<details>
+<summary>트윗 추가 기능 구현 2</summary>
+
+```
+1. uuid 라이브러리 추가
+    - npm install uuid
+    - 이미지 저장 시 고유 아이디로 저장하여 겹치지 않도록 하기 위함, 사용자의 uid/uuid 로 생성된 고유 번호로 스토리지에 저장
+2. firebase 규칙 및 색인 설정
+    - storage 규칙 수정 -> allow read, write: if request.auth != null; 해당 코드로 수정
+    - firestore 색인 수정 -> nweets ( creatorId ASC , createdAt ASC , 쿼리범위 : 컬렉션)
+3. 기타 사항
+    - 교제의 내용은 firebase v8 로 진행되어 현재 설치되어있는 패키지 버전과 호환이 잘 안되는 부분이 있음
+    - firebase doc 참조하여 v9 에서 권장하는 코드로 fbase.js , home.js 등등 firebase를 사용하는 부분 수정
+```
+</details>
+
 ### [05.25]
 <details>
 <summary>트윗 추가 기능 구현</summary>

@@ -1,6 +1,34 @@
 #  이세영
 ### 원본코드 : https://github.com/easysIT/nwitter
 
+### [05.25]
+<details>
+<summary>트윗 추가 기능 구현</summary>
+
+```
+1. 수정 기능 구현
+2. 사진 미리보기 기능 구현
+3. 웹 브라우저에 사진 출력
+4. 파일 선택 및 취소 버튼 생성
+
+```
+</details>
+
+### [05.18]
+<details>
+<summary>firebase 연동 (이어서)</summary>
+
+```
+1. 트윗 사용자 인덱스 관리 
+    - 수정, 삭제 등의 관리 기능을 위한 고유 인식값 필요 -> createId 로 설정
+2. 실시간 DB로 리스트 보여주기
+    - 게시물 업로드시 새로고침을 해야만 화면상에 반영됨
+    - 처음 화면을 렌더링 할때만 get 함수로 파이어스토어의 데이터를 받아옴 -> get 을 onSnapshot 으로 변경
+3. 컴포넌트 분리
+4. 트윗 수정, 삭제 기능 추가
+```
+</details>
+
 ### [05.11]
 <details>
 <summary>firebase DB 생성 및 연동 </summary>
